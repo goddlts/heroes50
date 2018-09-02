@@ -17,6 +17,7 @@ import router from './routers';
 import axios from 'axios';
 
 // 给Vue的原型增加axios成员
+axios.defaults.baseURL = 'http://127.0.0.1:3001/';
 Vue.prototype.$http = axios;
 
 new Vue({

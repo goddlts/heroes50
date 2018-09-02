@@ -37,7 +37,7 @@ export default {
       // this.axios.get
 
       this.$http
-        .get(`http://127.0.0.1:3001/heroes/${this.id}`)
+        .get(`heroes/${this.id}`)
         .then((response) => {
           this.formData = response.data;
         })
@@ -48,7 +48,7 @@ export default {
     // 修改英雄
     handleEdit() {
       this.$http
-        .put(`http://127.0.0.1:3001/heroes/${this.id}`, this.formData)
+        .put(`heroes/${this.id}`, this.formData)
         .then((response) => {
           if (response.status === 200) {
             // 修改成功，跳转到列表页面

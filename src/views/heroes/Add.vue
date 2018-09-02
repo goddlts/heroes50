@@ -37,7 +37,7 @@ export default {
     handleAdd() {
       // 判断用户是否输入数据
       this.$http
-        .post('http://127.0.0.1:3001/heroes', this.formData)
+        .post('heroes', this.formData)
         .then((response) => {
           // 判断是否添加成功（post执行成功返回的状态码是201）
           if (response.status === 201) {

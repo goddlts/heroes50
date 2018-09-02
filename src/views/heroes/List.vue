@@ -54,7 +54,7 @@ export default {
     // 加载数据
     loadData() {
       this.$http
-        .get('http://localhost:3001/heroes')
+        .get('heroes')
         .then((response) => {
           if (response.status === 200) {
             this.list = response.data;
@@ -71,7 +71,7 @@ export default {
       }
       // 发送异步请求，删除数据
       this.$http
-        .delete(`http://localhost:3001/heroes/${id}`)
+        .delete(`heroes/${id}`)
         .then((response) => {
           if (response.status === 200) {
             alert('删除成功');
