@@ -36,7 +36,6 @@ export default {
     // 添加
     handleAdd() {
       // 判断用户是否输入数据
-
       axios
         .post('http://127.0.0.1:3001/heroes', this.formData)
         .then((response) => {
