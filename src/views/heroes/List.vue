@@ -22,8 +22,11 @@
             <td>
               <a href="edit.html">edit</a>
               &nbsp;&nbsp;
-              <a href="javascript:window.confirm('Are you sure?')">delete</a>
+              <a href="javascript:;" @click.prevent="handleDelete(item.id)">delete</a>
             </td>
+          </tr>
+          <tr>
+            <td v-if="list.length === 0" colspan="4">暂无数据</td>
           </tr>
         </tbody>
       </table>
@@ -53,6 +56,27 @@ export default {
         .then((response) => {
           if (response.status === 200) {
             this.list = response.data;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    handleDelete(id) {
+      // 删除提示
+      if (!confirm('确定删除该英雄么？')) {
+        return;
+      }
+      // 发送异步请求，删除数据
+      axios
+        .delete(`http://localhost:3001/heroes/${id}`)
+        .then((response) => {
+          if (response.status === 200) {
+            alert('删除成功');
+            // 重新加载列表数据
+            this.loadData();
+          } else {
+            alert('删除失败');
           }
         })
         .catch((err) => {
