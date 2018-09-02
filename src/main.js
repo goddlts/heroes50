@@ -14,11 +14,16 @@ import './assets/css/index.css';
 // 导入路由模块
 import router from './routers';
 
-import axios from 'axios';
+// import axios from 'axios';
 
 // 给Vue的原型增加axios成员
-axios.defaults.baseURL = 'http://127.0.0.1:3001/';
-Vue.prototype.$http = axios;
+// axios.defaults.baseURL = 'http://127.0.0.1:3001/';
+// Vue.prototype.$http = axios;
+
+import MyHttp from './plugins/MyHttp.js';
+// 注册插件
+// 调用插件对象 MyHttp.install方法
+Vue.use(MyHttp);
 
 new Vue({
   el: '#app',
