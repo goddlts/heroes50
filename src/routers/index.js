@@ -13,7 +13,10 @@ Vue.use(VueRouter);
 // 创建路由对象
 const router = new VueRouter({
   // 设置精确的激活类样式
-  linkExactActiveClass: 'active',
+  // linkExactActiveClass: 'active',
+
+  // url中的路由地址，包含a标签的路由地址，就高亮显示
+  linkActiveClass: 'active',
   // 路由规则
   routes: [
     { path: '/', redirect: '/heroes' },
