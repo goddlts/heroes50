@@ -4,6 +4,7 @@
 
 // ES6模块化的语法
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 import App from './App.vue';
 
 // 导入全局的样式
@@ -11,7 +12,18 @@ import App from './App.vue';
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/css/index.css';
 
+// Vue.use()注册VueRouter插件
+Vue.use(VueRouter);
+
+// 创建路由对象
+const router = new VueRouter({
+  // 路由规则
+  routes: [
+  ]
+});
+
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router
 });
