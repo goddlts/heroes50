@@ -21,7 +21,8 @@
             <td>{{ item.name }}</td>
             <td>{{ item.gender }}</td>
             <td>
-              <a href="edit.html">edit</a>
+              <!-- <a href="edit.html">edit</a> -->
+              <router-link :to="'/heroes/edit/' + item.id">edit</router-link>
               &nbsp;&nbsp;
               <a href="javascript:;" @click.prevent="handleDelete(item.id)">delete</a>
             </td>
