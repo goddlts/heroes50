@@ -14,6 +14,11 @@ import './assets/css/index.css';
 // 导入路由模块
 import router from './routers';
 
+import axios from 'axios';
+
+// 给Vue的原型增加axios成员
+Vue.prototype.$http = axios;
+
 new Vue({
   el: '#app',
   render: h => h(App),

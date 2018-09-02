@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   props: ['id'],
@@ -34,7 +34,9 @@ export default {
   methods: {
     // 根据id，获取英雄的详细信息
     loadData() {
-      axios
+      // this.axios.get
+
+      this.$http
         .get(`http://127.0.0.1:3001/heroes/${this.id}`)
         .then((response) => {
           this.formData = response.data;
@@ -45,7 +47,7 @@ export default {
     },
     // 修改英雄
     handleEdit() {
-      axios
+      this.$http
         .put(`http://127.0.0.1:3001/heroes/${this.id}`, this.formData)
         .then((response) => {
           if (response.status === 200) {

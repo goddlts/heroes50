@@ -21,7 +21,7 @@
 // 3 点击按钮，获取post过去的数据，发送post请求
 // 4 添加成功，重新加载表格数据
 
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   data() {
@@ -36,7 +36,7 @@ export default {
     // 添加
     handleAdd() {
       // 判断用户是否输入数据
-      axios
+      this.$http
         .post('http://127.0.0.1:3001/heroes', this.formData)
         .then((response) => {
           // 判断是否添加成功（post执行成功返回的状态码是201）
